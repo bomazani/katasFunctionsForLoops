@@ -80,12 +80,11 @@ function fibonacci(){
         for (i=2; i<numOfTimes; i++){
             fibonacci();
         }
-    }else if(numOfTimes=2){
+    }else if(numOfTimes===2){
         fibNum = 1;
-    }else if(numOfTimes=1){
+    }else{
         fibNum = 0;
     }
 num5.textContent = fibNum;
 document.body.appendChild(num5)
-// ** If numOfTimes = 1, 0 should be returned; however, it returns 1.
-// ** Other than that, it works.
+
