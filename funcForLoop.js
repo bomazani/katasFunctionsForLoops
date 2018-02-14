@@ -67,24 +67,30 @@ document.body.appendChild(num4);
 // 0 1 1 2 3 5 8 [13] 21
 // The number in brackets is the 8th fibonacci number.
 const num5 = document.createElement("div");
-numOfTimes = 8;
+
+
+function fibonacci(n){
 fibNum = 0;
 newNum = 1;
 origNum = 0;
-function fibonacci(){
-    fibNum = origNum + newNum;
-    origNum = newNum;
-    newNum = fibNum;
-}
-    if(numOfTimes>2){
-        for (i=2; i<numOfTimes; i++){
-            fibonacci();
+    
+    if(n>2){
+        for (i=2; i<n; i++){
+            fibNum = origNum + newNum;
+            origNum = newNum;
+            newNum = fibNum;
         }
-    }else if(numOfTimes===2){
+    }else if(n===2){
         fibNum = 1;
     }else{
         fibNum = 0;
     }
-num5.textContent = fibNum;
+
+    num5.textContent = fibNum;
 document.body.appendChild(num5)
+}
+
+console.log(fibonacci(8)); 
+
+
 
