@@ -57,7 +57,6 @@ prod4 = prod4*i;
 }
 for (i=z; i>0; i--){
 factorial();
-//prod4 = prod4*e;
 }
 num4.textContent = prod4;
 document.body.appendChild(num4);
@@ -67,14 +66,26 @@ document.body.appendChild(num4);
 // Display the result of calling fibonacci(8), which should be 13:
 // 0 1 1 2 3 5 8 [13] 21
 // The number in brackets is the 8th fibonacci number.
-// const num5 = document.createElement("div");
-// NumOfTimes = 8;
-// fibnum = 0;
-// function fibonacci(){
-// fibnum = fibnum + (fibnum+1);
-// }
-// for (i=0; i<NumOfTimes; i++){
-//     fibonacci();
-// }
-// num5.textContent = fibnum;
-// document.body.appendChild(num5);
+const num5 = document.createElement("div");
+numOfTimes = 8;
+fibNum = 0;
+newNum = 1;
+origNum = 0;
+function fibonacci(){
+    fibNum = origNum + newNum;
+    origNum = newNum;
+    newNum = fibNum;
+}
+    if(numOfTimes>2){
+        for (i=2; i<numOfTimes; i++){
+            fibonacci();
+        }
+    }else if(numOfTimes=2){
+        fibNum = 1;
+    }else if(numOfTimes=1){
+        fibNum = 0;
+    }
+num5.textContent = fibNum;
+document.body.appendChild(num5)
+// ** If numOfTimes = 1, 0 should be returned; however, it returns 1.
+// ** Other than that, it works.
